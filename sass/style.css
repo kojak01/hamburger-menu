@@ -1,1 +1,81 @@
-/*# sourceMappingURL=style.css.map */
+/* Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: rgb(39, 136, 255);
+  --blueHover: rgb(55, 152, 255);
+}
+
+html {
+  font-size: 10px;
+  overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Nav Style */
+.logo {
+  width: 6.5em;
+}
+
+nav {
+  background-color: rgb(239, 232, 232);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8vh;
+  padding: 2em;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  width: 55%;
+  justify-content: space-around;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.7rem;
+  font-weight: bold;
+  position: relative;
+  padding: 0.2em;
+  color: var(--blue);
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  background-color: var(--blue);
+  height: 0.15em;
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* Burger */
+.burger {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.line {
+  width: 3em;
+  height: 0.3em;
+  background: var(--blue);
+  margin: 0.7em;
+  border-radius: 20px;
+  transition: 0.3s ease-in-out;
+  display: none;
+}/*# sourceMappingURL=style.css.map */

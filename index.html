@@ -26,5 +26,15 @@
             <div class="line"></div>
         </button>
     </nav>
+
+    <script>
+        const mobileNav = document.querySelector('ul');
+        const burgerIcon = document.querySelector('.burger');
+
+        burgerIcon.addEventListener('click', () => {
+            mobileNav.classList.toggle('active');
+            burgerIcon.classList.toggle('active');
+        })
+    </script>
 </body>
 </html>

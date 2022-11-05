@@ -5,11 +5,6 @@
   box-sizing: border-box;
 }
 
-:root {
-  --blue: rgb(39, 136, 255);
-  --blueHover: rgb(55, 152, 255);
-}
-
 html {
   font-size: 10px;
   overflow-x: hidden;
@@ -28,6 +23,7 @@ nav {
   align-items: center;
   height: 8vh;
   padding: 2em;
+  position: relative;
 }
 
 ul {
@@ -43,7 +39,7 @@ a {
   font-weight: bold;
   position: relative;
   padding: 0.2em;
-  color: var(--blue);
+  color: #2788ff;
 }
 
 a::after {
@@ -52,7 +48,7 @@ a::after {
   bottom: 0;
   left: 0;
   width: 0%;
-  background-color: var(--blue);
+  background-color: #2788ff;
   height: 0.15em;
   border-radius: 10px;
   transition: 0.3s ease-in-out;
@@ -68,14 +64,58 @@ a:hover::after {
   border: none;
   outline: none;
   cursor: pointer;
+  display: none;
 }
 
 .line {
   width: 3em;
   height: 0.3em;
-  background: var(--blue);
+  background: #2788ff;
   margin: 0.7em;
   border-radius: 20px;
   transition: 0.3s ease-in-out;
-  display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+  .burger {
+    display: block;
+    transition: 0.3s ease-in-out;
+  }
+
+  .burger.active .line:first-child {
+    transform: translateY(-300px);
+  }
+
+  .burger.active .line:nth-child(2) {
+    transform: rotate(-405deg) translateY(8px);
+  }
+
+  .burger.active .line:nth-child(3) {
+    transform: rotate(-320deg) translateY(-10px);
+  }
+
+  ul {
+    position: absolute;
+    right: 0;
+    top: 8vh;
+    background: #2788ff;
+    height: 92vh;
+    flex-direction: column;
+    text-align: center;
+    transform: translate(100%);
+    transition: 0.3s ease-in-out;
+  }
+  ul.active {
+    transform: translate(0%);
+  }
+  a {
+    color: whitesmoke;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+}
+@media only screen and (max-width: 760px) {
+  ul {
+    width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */
